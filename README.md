@@ -49,4 +49,13 @@ cmake --build build -- -j jumlahprosesor
 ```
 ctest -j jumlahprosesor
 ``` 
-3. 
+3. Apabila dari hasil test ada yang FAILED maka: 
+```
+./utills/get_opt_externals ALL 
+```
+4. Install build yang telah dibuat: 
+```
+cmake --install build 
+
+## Instalasi 
+
