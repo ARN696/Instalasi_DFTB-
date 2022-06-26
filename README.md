@@ -35,6 +35,7 @@ rm -rf build
 ```
 7. lanjutkan dengan mengulangi langkah 4
 ```
+```
 8. Membuild C Folder Build 
 ```
 cmake --build build -- -j jumlahprosesor 
