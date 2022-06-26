@@ -1,8 +1,9 @@
-# DFTBplus 
+# Instalasi_DFTBplus
 
-## Instalasi DFTBplus
-### Instalasi menggunakan git clone 
-1. sudo apt install git 
+## Instalasi menggunakan git clone 
+1. Install git  
+```
+sudo apt install git
 ```
 2. Cloning Repositori DFTB+ 
 ```
