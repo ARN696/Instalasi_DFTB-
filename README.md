@@ -55,7 +55,19 @@ ctest -j jumlahprosesor
 ```
 4. Install build yang telah dibuat: 
 ```
-cmake --install build 
+cmake --install build
+```
 
-## Instalasi 
+## Aliasing DFTB+
+1. Install vim 
+```
+sudo apt install vim 
+```
+2. membuka bashrc
+```
+vi ~/.bashrc 
+```
+3. ketik line baru pada bashrc:
+```
+alias dftb+=direktori penginstalan dftb+ 
 
