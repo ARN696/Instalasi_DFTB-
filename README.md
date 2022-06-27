@@ -206,14 +206,14 @@ cd dftbplus
 ```
 sudo apt install -y libblas-dev libarpack2-dev
 ```
-8. Setting Enviroment Cmake menggunakan FC=gfortran dan CC=GCC. Membutuhkan packages cmake, gfortran dan gcc. __JIKA TIDAK ADA ERROR SILAHKAN LANJUT KE STEP NO 10__
+8. Setting Enviroment Cmake menggunakan FC=gfortran dan CC=GCC. Membutuhkan packages cmake, gfortran dan gcc. 
 ```
 sudo apt install -y cmake gfortran gcc
 ```
 ```
 FC=gfortran CC=gcc cmake -DCMAKE_INSTALL_PREFIX=$HOME/$USER/dftb+ -B build .
 ```
-9. Jika terdapat Error maka hapus direktori build dan mengulang Setting Enviroment
+9. Jika terdapat Error maka hapus direktori build dan mengulang Setting Enviroment. __JIKA TIDAK ADA ERROR SILAHKAN LANJUT KE STEP NO 10__
 ```
 rm -rf build
 ```
