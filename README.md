@@ -204,7 +204,7 @@ cd dftbplus
 ```
 7. Install library yang dibutuhkan
 ```
-sudo apt install -y libblas-dev libarpack2-dev
+sudo apt install -y libblas-dev libarpack2 libarpack2-dev
 ```
 8. Setting Enviroment Cmake menggunakan FC=gfortran dan CC=GCC. Membutuhkan packages cmake, gfortran dan gcc. 
 ```
