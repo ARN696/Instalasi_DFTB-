@@ -1,28 +1,28 @@
-# Guide to Install DFTB+
+# Instalasi_DFTBplus
 
-## Clone DFTB+
+## Clone Repository dftbplus
 1. Install git  
 ```
 sudo apt install -y git
 ```
-2. Update and Upgrade Packages
+2. Update dan Upgrade Packages
 ```
 sudo apt update && sudo apt upgrade -y
 ```
-3. Cloning DFTB+ Repo
+3. Cloning Repositori DFTB+ 
 ```
 git clone https://github.com/dftbplus/dftbplus
 ```
-## Configure and Build DFTB+
-1. Go to dftbplus
+## Setting dan Build DFTB+
+1. Masuk ke directory dftbplus
 ```
 cd dftbplus
 ```
-2. Open config.cmake 
+2. Membuka config.cmake 
 ```
 nano config.cmake
 ```
-3. Edit Configuration file, our recommendation (feel free to copy and paste):
+3. Mengedit konfigurasi sesuai kebutuhan, rekomendasi kami (silahkan di copy dan paste):
 ```
 #
 # Global architecture independent build settings
@@ -180,13 +180,13 @@ option(LCOV_REPORT "Whether coverage report should be generated via lcov/genhtml
 # with the lcov_report target (e.g. `make lcov_report`). If you only need the evaluated coverage
 # data, but no HTML report, build the `lcov_eval` target instead.
 ```
-4. Save and Exit
+4. Save dan Exit
 ```
 ctrl + o
 enter
 ctrl + x
 ```
-6. Move dftbplus directory to new directory called opt
+6. Memindahkan direktori dftbplus ke direktori baru yaitu opt
 ```
 cd ..
 ```
@@ -202,52 +202,52 @@ cd opt
 ```
 cd dftbplus
 ```
-7. Installing required library
+7. Install library yang dibutuhkan
 ```
 sudo apt install -y libblas-dev libarpack2-dev
 ```
-8. Configure Cmake enviroment FC=gfortran dan CC=GCC. Required packages: cmake, gfortran and gcc.
+8. Setting Enviroment Cmake menggunakan FC=gfortran dan CC=GCC. Membutuhkan packages cmake, gfortran dan gcc. __JIKA TIDAK ADA ERROR SILAHKAN LANJUT KE STEP NO 10__
 ```
 sudo apt install -y cmake gfortran gcc
 ```
 ```
 FC=gfortran CC=gcc cmake -DCMAKE_INSTALL_PREFIX=$HOME/$USER/dftb+ -B build .
 ```
-9. If there's an error remove build directory and retry setting enviroment. __IF THERE IS NO ERROR GO TO STEP 10__
+9. Jika terdapat Error maka hapus direktori build dan mengulang Setting Enviroment
 ```
 rm -rf build
 ```
 ```
 FC=gfortran CC=gcc cmake -DCMAKE_INSTALL_PREFIX=$HOME/$USER/dftb+ -B build .
 ```
-10. Build Cmake Build
+10. Membuild C Folder Build 
 ```
 cmake --build build -- -j 10
 ```
-__10 is number of CPUs in, we will use 10 CPUs.
-To check number of CPUs available use command:__
+__Dimana 10 adalah jumlah CPUs yang ingin digunakan, kali ini kami menggunakan 10 CPUs.
+Untuk mengecek jumlah core dapat menggunakan commmand:__
 ```
 lscpu
 ```
 
-## Download Required Parameters for DFTB+
-1.  Download ALL paramters
+## Download Parameter untuk DFTB+
+1.  Download semua parameter yang dibutuhkan untuk DFTB+
 ```
 ./utils/get_opt_externals ALL
 ```
-2. Test dftbplus
+2. untuk mengetest dftb plus 
 ```
 cd build
 ```
 ```
 ctest -j 10
 ``` 
-__10 is number of CPUs in, we will use 10 CPUs.
-To check number of CPUs available use command:__
+__Dimana 10 adalah jumlah CPUs yang ingin digunakan, kali ini kami menggunakan 10 CPUs.
+Untuk mengecek jumlah core dapat menggunakan commmand:__
 ```
 lscpu
 ```
-3. Install build: 
+3. Install build yang telah dibuat: 
 ```
 cd ..
 ```
@@ -256,18 +256,18 @@ cmake --install build
 ```
 
 ## Aliasing DFTB+
-1. Open bashrc
+1. membuka bashrc
 ```
 nano ~/.bashrc 
 ```
-2. Paste these comand in the bottom line of .bashrc:
+2. Paste command berikut pada bashrc paling bawah:
 ```
 alias dftb+="home/$USER/opt/dftbplus/build/app/dftb+/dftb+"
 alias modes+="home/$USER/opt/dftbplus/build/app/modes/modes"
 alias phonons="home/$USER/opt/dftbplus/build/app/phonons/phonons"
 alias waveplot="home/$USER/opt/dftbplus/build/app/waveplot/waveplot"
 ```
-3. Save and Exit
+3. Save dan Exit
 ```
 ctrl + o
 enter
@@ -277,7 +277,7 @@ ctrl + x
 ```
 source ~/.bashrc
 ```
-5. After aliasing we can call these program using command:
+5. Setelah melakukan aliasing, untuk memanggil program dapat menggunakan command:
 DFTB+ ``` dftb+ ```
 Modes ``` modes ```
 Phonons ``` phonons ```
